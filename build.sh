@@ -60,7 +60,7 @@ function run_terraform_apply() {
          -var "builder_count=1" \
          -var "pvt_key=${SSH_KEY_PATH}" -auto-approve \
          -var "repo_owner=${REPO_OWNER}" \
-         -var "commit_hash=${COMMIT_HASH}"
+         -var "commit_hash=${COMMIT_HASH}" \
          -target=digitalocean_droplet.node_builder
     terraform destroy \
          -var "do_token=${DO_PAT}" \

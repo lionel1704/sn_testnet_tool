@@ -19,7 +19,7 @@ resource "digitalocean_droplet" "node_builder" {
         inline = [
             "git clone https://github.com/${var.repo_owner}/safe_network -q",
             "cd safe_network",
-            "git checkout ${var.commit_hash}
+            "git checkout ${var.commit_hash}",
             "apt -qq update",
             "while fuser /var/{lib/{dpkg,apt/lists},cache/apt/archives}/lock >/dev/null 2>&1; do sleep 1; done",
             "apt -qq install musl-tools -y ",
